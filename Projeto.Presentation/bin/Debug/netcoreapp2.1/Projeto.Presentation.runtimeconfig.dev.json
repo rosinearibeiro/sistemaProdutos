@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\COTI-MAQ02\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\COTI-MAQ02\\.nuget\\packages"
+    ]
+  }
+}

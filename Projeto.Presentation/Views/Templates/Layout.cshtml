@@ -1,0 +1,38 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Layout</title>
+
+    <!-- folha de estilo do Bootstrap -->
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+
+</head>
+<body class="container">
+
+    <div class="card card-body bg-dark">
+        <h3 class="text-white">Sistema de controle de produtos</h3>
+        <p class="text-white">Projeto desenvolvido em Asp.Net CORE MVC</p>
+    </div>
+
+    <br/>
+
+    <div class="row">
+        <div class="col-md-3">
+            <ul>
+                <li><a href="/Produto/Cadastro">Cadastrar Produtos</a></li>
+                <li><a href="/Produto/Consulta">Consultar Produtos</a></li>
+            </ul>
+        </div>
+        <div class="col-md-9">
+            @RenderBody()
+        </div>
+    </div>
+
+</body>
+</html>

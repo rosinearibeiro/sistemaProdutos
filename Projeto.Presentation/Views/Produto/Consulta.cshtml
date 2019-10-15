@@ -1,0 +1,56 @@
+﻿@model List<Projeto.Presentation.Models.ProdutoConsultaModel>
+
+@{
+    ViewData["Title"] = "Consulta";
+    Layout = "~/Views/Templates/Layout.cshtml";
+}
+
+<h4>Consulta de Produtos</h4>
+<hr />
+
+<div>
+    <strong>@TempData["Mensagem"]</strong>
+</div>
+
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+        <tr>
+            <td>Código</td>
+            <td>Nome do Produto</td>
+            <td width="120">Preço</td>
+            <td>Quantidade</td>
+            <td width="120">Total</td>
+            <td>Data de Cadastro</td>
+            <td width="180">Operações</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.IdProduto</td>
+                <td>@item.Nome</td>
+                <td>@item.Preco.ToString("c")</td>
+                <td>@item.Quantidade</td>
+                <td>@item.Total.ToString("c")</td>
+                <td>@item.DataCadastro.ToString("dd/MM/yyyy")</td>
+                <td>
+                    <a href="/Produto/Edicao/@item.IdProduto" 
+                       class="btn btn-primary btn-sm">
+                        Atualizar
+                    </a>
+                    <a href="/Produto/Exclusao/@item.IdProduto" 
+                       class="btn btn-danger btn-sm">
+                        Excluir
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="7">Quantidade de registros: @Model.Count</td>
+        </tr>
+    </tfoot>
+</table>
+
